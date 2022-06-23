@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject, ref, Ref } from 'vue';
+import { Ref } from 'vue';
 
 let data = inject<Ref<boolean>>("data", ref(false))
 

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { provide, ref } from "vue";
 import B from "./B.vue"
 
 let data = ref(true);

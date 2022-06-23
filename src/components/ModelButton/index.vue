@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-
 const open = ref(false)
 </script>
 
@@ -9,10 +7,10 @@ const open = ref(false)
         <button @click="open = true">Open Modal</button>
 
         <Teleport to="body">
-        <div v-if="open" class="modal">
-            <p>Hello from the modal!</p>
-            <button @click="open = false">Close</button>
-        </div>
+            <div v-if="open" class="modal">
+                <p>Hello from the modal!</p>
+                <button @click="open = false">Close</button>
+            </div>
         </Teleport>
     </div>
 </template>

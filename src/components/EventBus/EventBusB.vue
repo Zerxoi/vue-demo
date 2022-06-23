@@ -1,6 +1,5 @@
 <!-- EventBusB.vue -->
 <script setup lang="ts">
-import { ref } from "vue"
 import EventBus from "../../EventBus";
 
 let text = ref("")

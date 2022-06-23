@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, watch } from "vue"
-
 let text = ref("")
 
 const emit = defineEmits<{

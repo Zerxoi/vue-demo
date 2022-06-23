@@ -6,7 +6,6 @@ import ProvideInject from "../../components/ProvideInject/A.vue"
 
 import "animate.css"
 import Card from '../../components/Card/index.vue';
-import { defineAsyncComponent, markRaw, reactive, ref, watch } from "vue";
 import DefaultSlot from "../../components/Slot/DefaultSlot.vue";
 import ModelButton from "../../components/ModelButton/index.vue";
 import Login from "../../components/Login/index.vue";

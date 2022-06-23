@@ -17,6 +17,10 @@ import EventBusA from "../../components/EventBus/EventBusA.vue"
 import EventBusB from "../../components/EventBus/EventBusB.vue"
 import MittA from "../../components/MittProp/MittA.vue"
 import MittB from "../../components/MittProp/MittB.vue"
+import CustomInput from "../../components/CustomInput.vue"
+import MyModifier from "../../components/MyModifier.vue"
+import CustomDirect from "../../components/CustomDirect.vue"
+import { useBase64 } from "../../utils"
 
 type Tab = {
     name: string,
@@ -68,10 +72,20 @@ const onChange = (text: string) => {
     siblingText.value = text
 }
 
+let searchText = ref("")
+let modelText = ref("")
+let titleText = ref("")
+
+useBase64({ el: "#img" }).then(res => console.log(res.baseUrl))
 </script>
 
 <template>
     <div class="content">
+        <img id="img" src="../../assets/logo.png" alt="Vue Logo">
+        <CustomDirect></CustomDirect>
+        <MyModifier v-model.capitalize="modelText" v-model:title.upper="titleText"></MyModifier>
+        <CustomInput v-model="searchText" />
+        {{ searchText }}
         <div>
             <MittA></MittA>
             <MittB></MittB>

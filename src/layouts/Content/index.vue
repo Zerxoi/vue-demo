@@ -77,10 +77,21 @@ let modelText = ref("")
 let titleText = ref("")
 
 useBase64({ el: "#img" }).then(res => console.log(res.baseUrl))
+
+// getCurrentInstance 只能在 setup 或生命周期钩子中调用。
+let instance = getCurrentInstance()
+
+const showLoading = () => {
+    instance?.appContext.config.globalProperties.$loading.show()
+    setTimeout(() => {
+        instance?.appContext.config.globalProperties.$loading.hide()
+    }, 3000)
+}
 </script>
 
 <template>
     <div class="content">
+        <button @click="showLoading">Loading</button>
         <div>{{ $filter.format("战五渣") }}</div>
         <div>{{ $env }}</div>
         <img id="img" src="../../assets/logo.png" alt="Vue Logo">

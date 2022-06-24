@@ -3,6 +3,7 @@ import App from './App.vue'
 import './styles/main.css'
 import Card from './components/Card/index.vue'
 import mitt, { Emitter } from 'mitt';
+import Loading from './components/Loading'
 
 // 为时间设置泛型以获得改进的 mitt 实例方法的类型推断。
 type Events = {
@@ -16,7 +17,11 @@ declare module '@vue/runtime-core' {
     export interface ComponentCustomProperties {
         $Bus: Emitter<Events>,
         $filter: { format: (str: string) => string }
-        $env: "dev"
+        $env: "dev",
+        $loading: {
+            show: () => void,
+            hide: () => void
+        }
     }
 }
 
@@ -29,5 +34,5 @@ app.config.globalProperties.$filter = {
     }
 }
 app.config.globalProperties.$env = "dev"
-
+app.use(Loading)
 app.component("Card", Card).mount('#app')

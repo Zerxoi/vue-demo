@@ -81,6 +81,8 @@ useBase64({ el: "#img" }).then(res => console.log(res.baseUrl))
 
 <template>
     <div class="content">
+        <div>{{ $filter.format("战五渣") }}</div>
+        <div>{{ $env }}</div>
         <img id="img" src="../../assets/logo.png" alt="Vue Logo">
         <CustomDirect></CustomDirect>
         <MyModifier v-model.capitalize="modelText" v-model:title.upper="titleText"></MyModifier>

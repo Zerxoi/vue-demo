@@ -14,12 +14,20 @@ const emitter = mitt<Events>()
 
 declare module '@vue/runtime-core' {
     export interface ComponentCustomProperties {
-        $Bus: Emitter<Events>
+        $Bus: Emitter<Events>,
+        $filter: { format: (str: string) => string }
+        $env: "dev"
     }
 }
 
 let app = createApp(App)
 
 app.config.globalProperties.$Bus = emitter
+app.config.globalProperties.$filter = {
+    format(str: string): string {
+        return `真.${str}`
+    }
+}
+app.config.globalProperties.$env = "dev"
 
 app.component("Card", Card).mount('#app')

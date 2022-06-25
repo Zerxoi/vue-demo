@@ -12,6 +12,7 @@
     "element-plus": "^2.2.6",
     "gsap": "^3.10.4",
     "mitt": "^3.0.0",
+    "pinia": "^2.0.14",
     "vue": "^3.2.25"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ import Card from './components/Card/index.vue'
 import mitt, { Emitter } from 'mitt';
 import Loading from './components/Loading'
 import ElementPlus from 'element-plus'
+import { createPinia } from 'pinia'
 
 import './styles/main.css'
 import 'element-plus/dist/index.css'
@@ -38,5 +39,6 @@ app.config.globalProperties.$filter = {
 }
 app.config.globalProperties.$env = "dev"
 app.use(Loading)
-app.use(ElementPlus)
+    .use(ElementPlus)
+    .use(createPinia())
 app.component("Card", Card).mount('#app')

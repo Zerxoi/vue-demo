@@ -76,6 +76,7 @@ const showLoading = () => {
 
 <template>
     <div class="content">
+        <PiniaTest></PiniaTest>
         <NextTick></NextTick>
         <ScopedStyle class="scoped">
             <div class="a">私人定制 DIV</div>

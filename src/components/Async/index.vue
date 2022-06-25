@@ -2,8 +2,6 @@
 import { axios } from "./server"
 
 const list = await axios("./data.json")
-
-console.log(list)
 </script>
 
 <template>

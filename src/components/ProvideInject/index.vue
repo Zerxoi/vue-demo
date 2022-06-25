@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import B from "./B.vue"
-
 let data = ref(true);
 
 provide("data", data)
+</script>
+
+<script lang="ts">
+export default {
+    name: 'ProvideInject'
+}
 </script>
 
 <template>
     <div class="a">
         <h1>A</h1>
         <div> {{ data }}</div>
-        <B></B>
+        <ProvideInjectA></ProvideInjectA>
     </div>
 </template>
 

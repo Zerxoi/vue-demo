@@ -1,26 +1,11 @@
 <script setup lang="ts">
-import A from "./A.vue"
-import B from './B.vue'
-import C from './C.vue'
-import ProvideInject from "../../components/ProvideInject/A.vue"
-
 import "animate.css"
-import Card from '../../components/Card/index.vue';
-import DefaultSlot from "../../components/Slot/DefaultSlot.vue";
-import ModelButton from "../../components/ModelButton/index.vue";
-import Login from "../../components/Login/index.vue";
-import Register from "../../components/Register/index.vue";
 import gsap from "gsap"
-import SiblingA from "../../components/SiblingProp/SiblingA.vue"
-import SiblingB from "../../components/SiblingProp/SiblingB.vue"
-import EventBusA from "../../components/EventBus/EventBusA.vue"
-import EventBusB from "../../components/EventBus/EventBusB.vue"
-import MittA from "../../components/MittProp/MittA.vue"
-import MittB from "../../components/MittProp/MittB.vue"
-import CustomInput from "../../components/CustomInput.vue"
-import MyModifier from "../../components/MyModifier.vue"
-import CustomDirect from "../../components/CustomDirect.vue"
 import { useBase64 } from "../../utils"
+
+import ContentA from "./ContentA.vue"
+import ContentB from './ContentB.vue'
+import ContentC from './ContentC.vue'
 
 type Tab = {
     name: string,
@@ -30,15 +15,15 @@ type Tab = {
 let tabs = reactive<Tab[]>([
     {
         name: "A",
-        component: markRaw(A)
+        component: markRaw(ContentA)
     },
     {
         name: "B",
-        component: markRaw(B)
+        component: markRaw(ContentB)
     },
     {
         name: "C",
-        component: markRaw(C)
+        component: markRaw(ContentC)
     }
 ])
 

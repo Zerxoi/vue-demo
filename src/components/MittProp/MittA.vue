@@ -4,7 +4,6 @@ let text = ref("")
 
 // Tips: getCurrentInstance 不能写在回调函数内
 const instance = getCurrentInstance()
-console.log(instance);
 
 watch(text, (newVal) => {
     instance?.proxy?.$Bus.emit("change", newVal)

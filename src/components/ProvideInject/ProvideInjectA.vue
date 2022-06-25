@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Ref } from "vue";
-import C from "./C.vue"
 
 let data = inject<Ref<boolean>>("data", ref(false))
 </script>
@@ -9,7 +8,7 @@ let data = inject<Ref<boolean>>("data", ref(false))
     <div class="b">
         <h2>B</h2>
         <div>{{ data }}</div>
-        <C></C>
+        <ProvideInjectB></ProvideInjectB>
     </div>
 </template>
 

@@ -2,6 +2,12 @@
 const open = ref(false)
 </script>
 
+<script lang="ts">
+export default {
+    name: "ModelButton"
+}
+</script>
+
 <template>
     <div>
         <button @click="open = true">Open Modal</button>

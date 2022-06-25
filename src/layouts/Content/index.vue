@@ -76,6 +76,9 @@ const showLoading = () => {
 
 <template>
     <div class="content">
+        <ScopedStyle class="scoped">
+            <div class="a">私人定制 DIV</div>
+        </ScopedStyle>
         <button @click="showLoading">Loading</button>
         <div>{{ $filter.format("战五渣") }}</div>
         <div>{{ $env }}</div>
@@ -161,5 +164,11 @@ const showLoading = () => {
 .fade-enter-active,
 .fade-leave-active {
     transition: all 1.5s ease;
+}
+
+.scoped {
+    :deep(input) {
+        background: green;
+    }
 }
 </style>

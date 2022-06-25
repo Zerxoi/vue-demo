@@ -10,7 +10,6 @@ declare module '@vue/runtime-core' {
     CustomDirect: typeof import('./components/CustomDirect.vue')['default']
     CustomInput: typeof import('./components/CustomInput.vue')['default']
     DefaultSlot: typeof import('./components/Slot/DefaultSlot.vue')['default']
-    ElInput: typeof import('element-plus/es')['ElInput']
     EventBusA: typeof import('./components/EventBus/EventBusA.vue')['default']
     EventBusB: typeof import('./components/EventBus/EventBusB.vue')['default']
     Loading: typeof import('./components/Loading/index.vue')['default']

@@ -20,7 +20,7 @@ const vCustomDirect: Directive = (el: HTMLElement, binding: DirectiveBinding<Dir
 
 <template>
     <div>
-        <input type="text" v-custom-direct:style.focus="{ background: 'red' }">`
+        <input type="text" v-custom-direct:style.focus="{ background: 'red' }">
     </div>
 </template>
 

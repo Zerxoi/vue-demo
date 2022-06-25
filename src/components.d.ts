@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     MittB: typeof import('./components/MittProp/MittB.vue')['default']
     ModelButton: typeof import('./components/ModelButton/index.vue')['default']
     MyModifier: typeof import('./components/MyModifier.vue')['default']
+    NextTick: typeof import('./components/NextTick.vue')['default']
     ProvideInject: typeof import('./components/ProvideInject/index.vue')['default']
     ProvideInjectA: typeof import('./components/ProvideInject/ProvideInjectA.vue')['default']
     ProvideInjectB: typeof import('./components/ProvideInject/ProvideInjectB.vue')['default']

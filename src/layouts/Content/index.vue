@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import "animate.css"
 import gsap from "gsap"
-import { useRouter } from "vue-router"
 import { useBase64 } from "../../utils"
+import { data } from "../../assets/list.json"
 
 import ContentA from "./ContentA.vue"
 import ContentB from './ContentB.vue'
@@ -82,10 +82,41 @@ const toPage = (url: string) => {
         path: url
     })
 }
+
+type Item = {
+    name: string;
+    price: number;
+    id: number;
+}
+
+const toDetail = (item: Item) => {
+    router.push({
+        name: "Detail",
+        params: {
+            id: item.id
+        }
+    })
+}
 </script>
 
 <template>
     <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>品牌</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr :key="item.id" v-for="item in data">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td><button @click="toDetail(item)">详情</button></td>
+                </tr>
+            </tbody>
+        </table>
         <RouterLink :to="{ name: 'Login' }">Login</RouterLink>
         <RouterLink :to="{ name: 'Register' }">Register</RouterLink>
         <button @click="toPage('/')">Login</button>

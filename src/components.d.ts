@@ -26,7 +26,6 @@ declare module '@vue/runtime-core' {
     Register: typeof import('./components/Register/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterLogin: typeof import('./components/Router/RouterLogin.vue')['default']
-    'RouterLogin copy': typeof import('./components/Router/RouterLogin copy.vue')['default']
     RouterRegister: typeof import('./components/Router/RouterRegister.vue')['default']
     RouterView: typeof import('vue-router')['RouterView']
     ScopedStyle: typeof import('./components/ScopedStyle.vue')['default']

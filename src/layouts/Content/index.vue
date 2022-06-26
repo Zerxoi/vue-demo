@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import "animate.css"
 import gsap from "gsap"
+import { useRouter } from "vue-router"
 import { useBase64 } from "../../utils"
 
 import ContentA from "./ContentA.vue"
@@ -72,12 +73,23 @@ const showLoading = () => {
         instance?.appContext.config.globalProperties.$loading.hide()
     }, 3000)
 }
+
+let router = useRouter()
+
+const toPage = (url: string) => {
+    // router.push(url)
+    router.push({
+        path: url
+    })
+}
 </script>
 
 <template>
     <div class="content">
-        <RouterLink to="/">Login</RouterLink>
-        <RouterLink to="/register">Register</RouterLink>
+        <RouterLink :to="{ name: 'Login' }">Login</RouterLink>
+        <RouterLink :to="{ name: 'Register' }">Register</RouterLink>
+        <button @click="toPage('/')">Login</button>
+        <button @click="toPage('/register')">Register</button>
         <RouterView></RouterView>
         <PiniaTest></PiniaTest>
         <NextTick></NextTick>

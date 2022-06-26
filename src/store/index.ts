@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { MyPlugin } from "./my-plugin";
+import { StoragePlugin } from "./storage-plugin"
 
 const login = (): Promise<{ username: string }> => {
   return new Promise((resolve) => {
@@ -10,7 +12,7 @@ const login = (): Promise<{ username: string }> => {
   })
 }
 
-export const useMainStore = defineStore('main', {
+const useMainStore = defineStore('main', {
   // a function that returns a fresh state
   state: () => ({
     counter: 99,
@@ -38,3 +40,9 @@ export const useMainStore = defineStore('main', {
     }
   },
 })
+
+export {
+  useMainStore,
+  MyPlugin,
+  StoragePlugin,
+}

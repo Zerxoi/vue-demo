@@ -8,6 +8,7 @@ import { createPinia } from 'pinia'
 
 import './styles/main.css'
 import 'element-plus/dist/index.css'
+import { MyPlugin, StoragePlugin } from './store';
 
 // 为时间设置泛型以获得改进的 mitt 实例方法的类型推断。
 type Events = {
@@ -29,6 +30,8 @@ declare module '@vue/runtime-core' {
     }
 }
 
+
+
 let app = createApp(App)
 
 app.config.globalProperties.$Bus = emitter
@@ -40,5 +43,10 @@ app.config.globalProperties.$filter = {
 app.config.globalProperties.$env = "dev"
 app.use(Loading)
     .use(ElementPlus)
-    .use(createPinia())
+    // Vue 安装 Pinia 插件
+    .use(
+        // Pinia 安装 MyPlugin 插件
+        createPinia().use(MyPlugin).use(StoragePlugin({ key: "__pinia__" }))
+    )
 app.component("Card", Card).mount('#app')
+

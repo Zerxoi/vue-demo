@@ -13,7 +13,8 @@
     "gsap": "^3.10.4",
     "mitt": "^3.0.0",
     "pinia": "^2.0.14",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

@@ -76,6 +76,9 @@ const showLoading = () => {
 
 <template>
     <div class="content">
+        <RouterLink to="/">Login</RouterLink>
+        <RouterLink to="/register">Register</RouterLink>
+        <RouterView></RouterView>
         <PiniaTest></PiniaTest>
         <NextTick></NextTick>
         <ScopedStyle class="scoped">

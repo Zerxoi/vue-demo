@@ -3,7 +3,9 @@
 </script>
 
 <template>
-    <div class="header">头部区域</div>
+    <div class="header">
+        <h2>头部区域</h2>
+    </div>
 </template>
 
 <style lang="less" scoped>

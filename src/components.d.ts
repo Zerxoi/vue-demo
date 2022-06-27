@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     ProvideInjectB: typeof import('./components/ProvideInject/ProvideInjectB.vue')['default']
     Register: typeof import('./components/Register/index.vue')['default']
     RouterDetail: typeof import('./components/Router/RouterDetail.vue')['default']
+    RouterHeader: typeof import('./components/Router/RouterHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterLogin: typeof import('./components/Router/RouterLogin.vue')['default']
     RouterRegister: typeof import('./components/Router/RouterRegister.vue')['default']

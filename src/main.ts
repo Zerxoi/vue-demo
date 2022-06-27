@@ -5,6 +5,7 @@ import mitt, { Emitter } from 'mitt';
 import Loading from './components/Loading'
 import ElementPlus from 'element-plus'
 import { createPinia } from 'pinia'
+import LoadingBar from './components/LoadingBar'
 
 import './styles/main.css'
 import 'element-plus/dist/index.css'
@@ -27,9 +28,27 @@ declare module '@vue/runtime-core' {
         $loading: {
             show: () => void,
             hide: () => void
+        },
+        $bar: {
+            startLoading: () => void,
+            endLoading: () => void
         }
     }
 }
+
+const whiteList = ['/']
+router.beforeEach((to, from, next) => {
+    app.config.globalProperties.$bar.startLoading()
+    if (whiteList.includes(to.path) || localStorage.getItem('token')) {
+        next();
+    } else {
+        next('/');
+    }
+})
+
+router.afterEach((to, from) => {
+    app.config.globalProperties.$bar.endLoading()
+})
 
 let app = createApp(App)
 
@@ -49,4 +68,5 @@ app.use(Loading)
     )
     // 安装 Router 插件
     .use(router)
+    .use(LoadingBar)
 app.component("Card", Card).mount('#app')

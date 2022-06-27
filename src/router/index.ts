@@ -5,7 +5,8 @@ const routes: RouteRecordRaw[] = [
         path: "/",
         name: "Login",
         meta: {
-            title: '登录'
+            title: '登录',
+            transition: "animate__fadeInUp",
         },
         component: () => import("../components/Router/RouterLogin.vue")
     },
@@ -13,7 +14,8 @@ const routes: RouteRecordRaw[] = [
         path: "/register",
         name: "Register",
         meta: {
-            title: '注册'
+            title: '注册',
+            transition: "animate__bounceIn",
         },
         component: () => import("../components/Router/RouterRegister.vue")
     },

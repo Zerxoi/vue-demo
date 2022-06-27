@@ -39,7 +39,8 @@ declare module '@vue/runtime-core' {
 declare module 'vue-router' {
     interface RouteMeta {
         // 是可选的
-        title?: string
+        title?: string,
+        transition?: string
     }
 }
 

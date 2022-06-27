@@ -121,7 +121,11 @@ const toDetail = (item: Item) => {
         <RouterLink :to="{ name: 'Register' }">Register</RouterLink>
         <button @click="toPage('/')">Login</button>
         <button @click="toPage('/register')">Register</button>
-        <RouterView></RouterView>
+        <RouterView v-slot="{ Component, route }">
+            <Transition :enter-active-class="`animate__animated ${route.meta.transition ?? 'animate__shakeX'}`">
+                <component :is="Component" />
+            </Transition>
+        </RouterView>
         <PiniaTest></PiniaTest>
         <NextTick></NextTick>
         <ScopedStyle class="scoped">

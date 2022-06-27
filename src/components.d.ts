@@ -33,6 +33,10 @@ declare module '@vue/runtime-core' {
     SiblingA: typeof import('./components/SiblingProp/SiblingA.vue')['default']
     SiblingB: typeof import('./components/SiblingProp/SiblingB.vue')['default']
     Tree: typeof import('./components/Tree/index.vue')['default']
+    User: typeof import('./components/Router/User.vue')['default']
+    UserHome: typeof import('./components/Router/UserHome.vue')['default']
+    UserPosts: typeof import('./components/Router/UserPosts.vue')['default']
+    UserProfile: typeof import('./components/Router/UserProfile.vue')['default']
   }
 }
 

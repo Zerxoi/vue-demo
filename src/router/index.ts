@@ -4,11 +4,17 @@ const routes: RouteRecordRaw[] = [
     {
         path: "/",
         name: "Login",
+        meta: {
+            title: '登录'
+        },
         component: () => import("../components/Router/RouterLogin.vue")
     },
     {
         path: "/register",
         name: "Register",
+        meta: {
+            title: '注册'
+        },
         component: () => import("../components/Router/RouterRegister.vue")
     },
     {

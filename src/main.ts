@@ -36,9 +36,17 @@ declare module '@vue/runtime-core' {
     }
 }
 
+declare module 'vue-router' {
+    interface RouteMeta {
+        // 是可选的
+        title?: string
+    }
+}
+
 const whiteList = ['/']
 router.beforeEach((to, from) => {
     app.config.globalProperties.$bar.startLoading()
+    document.title = to.meta.title || "Vue Demo"
     if (whiteList.includes(to.path) || localStorage.getItem('token')) {
         return true
     } else {

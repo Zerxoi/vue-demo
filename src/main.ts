@@ -37,12 +37,12 @@ declare module '@vue/runtime-core' {
 }
 
 const whiteList = ['/']
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
     app.config.globalProperties.$bar.startLoading()
     if (whiteList.includes(to.path) || localStorage.getItem('token')) {
-        next();
+        return true
     } else {
-        next('/');
+        return '/'
     }
 })
 

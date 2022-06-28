@@ -100,10 +100,14 @@ const toDetail = (item: Item) => {
         }
     })
 }
+
+const count = ref(0)
 </script>
 
 <template>
     <div class="content">
+        <button @click="count--">-</button>{{ count }}<button @click="count++">+</button>
+        <ReactivityTransform :msg="searchText" :count="count" :foo="modelText"></ReactivityTransform>
         <HelloVue msg="aaa"></HelloVue>
         <HelloRender msg="bbb"></HelloRender>
         <HelloTsx msg="ccc"></HelloTsx>

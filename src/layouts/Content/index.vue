@@ -7,6 +7,9 @@ import { data } from "../../assets/list.json"
 import ContentA from "./ContentA.vue"
 import ContentB from './ContentB.vue'
 import ContentC from './ContentC.vue'
+import HelloTsx from '../../tsx/HelloTsx'
+import HelloRender from '../../tsx/HelloRender'
+import HelloVue from "../../tsx/HelloVue.vue"
 
 type Tab = {
     name: string,
@@ -101,6 +104,9 @@ const toDetail = (item: Item) => {
 
 <template>
     <div class="content">
+        <HelloVue msg="aaa"></HelloVue>
+        <HelloRender msg="bbb"></HelloRender>
+        <HelloTsx msg="ccc"></HelloTsx>
         <table>
             <thead>
                 <tr>

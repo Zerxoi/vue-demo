@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { reactive } from '@vue/reactivity';
-
 let form = reactive({
     username: "",
     password: ""

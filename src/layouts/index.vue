@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive, ref } from '@vue/reactivity';
 import Content from './Content/index.vue'
 import Header from './Header/index.vue'
 import Menu from './Menu/index.vue'
